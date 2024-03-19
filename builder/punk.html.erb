@@ -1,0 +1,137 @@
+<script src="https://learnpixelart.github.io/pixelart.js/dataset.js/dataset.js"></script>
+<script src="https://learnpixelart.github.io/pixelart.js/pixelart.js/composite.js"></script>
+<script src="https://learnpixelart.github.io/pixelart.js/pixelart.js/spritesheet.js"></script>
+<script src="https://learnpixelart.github.io/pixelart.js/pixelart.js/generator.js"></script>
+
+
+<style>
+  fieldset div {
+      display: inline-block;
+      width: 240px;
+  }
+</style>
+
+
+<p style="font-size: 80%;">
+    <a href="https://github.com/orc721/nodepunks">« Node Punks</a>
+</p>
+
+
+<h1>Build Your Own Node Punk (24×24) Wizard</h1>
+
+
+<p>Yes, you can!
+Build your own originals that you
+own 100% forever.
+Questions? Comments? 
+Join us in the <a href="https://discord.gg/dDhvHKjm2t">Ordbase discord (chat server)</a>.
+
+<br>
+Looking for monkes? 
+See <a href="../../monkes21/build">Monke (28×28) Wizard »</a>
+</p>
+
+
+
+<table>
+  <tr>
+    <td width="248px" valign="top">
+      <!-- first column -->
+
+      10x (240×240px)<br>
+      <canvas id="punk10x"></canvas>  <br>
+
+      4x (96×96px)<br>
+      <canvas id="punk4x"></canvas>  <br>
+
+      1x (24×24px)<br>
+      <canvas id="punk1x"></canvas>
+
+    </td>
+    <td><!-- second column -->
+
+
+<%= render_options( PUNK ) %>
+
+</td>
+</tr>
+</table>
+
+<p style="font-size: 80%;">
+   Open source public domain.
+   No rights reserved.
+  See
+  <a href="https://github.com/orc721/nodepunks/tree/master/builder">/nodepunks/builder »</a>
+</p>
+
+
+<script>
+
+     var g;    // (global) generator  (see document load)
+
+
+   function autoupdate() {
+    let els = document.querySelectorAll( "input[type='radio']" );
+       for( let el of Array.from( els ) ) {
+          el.addEventListener('click', () => update() );
+       }
+
+     // pre-select 
+     let el = document.querySelector( "input[value='joe']" );
+     el.checked = true;
+     el = document.querySelector( "input[value='small shades']" );
+     el.checked = true;
+     el = document.querySelector( "input[value='cap blue']" );
+     el.checked = true;
+
+   }
+
+  function update() {
+    let els = document.querySelectorAll( "input[type='radio']" );
+       // console.log( els );
+
+       let attributes = [];
+ 
+       for( let el of Array.from( els ) ) {
+         let value = el.value
+
+         if (el.checked) {
+           console.log( value );
+
+           if( value == 'none' ) {
+              continue;
+           }
+
+           attributes.push( value );
+         }
+       }
+
+       console.log( attributes );
+       generate( ...attributes );
+      }
+
+  function generate( ...args ) {
+       g.generate( '#punk10x', ...args, {zoom: 10, background: '#FD5401'} );
+       g.generate( '#punk4x', ...args, {zoom: 4, background: '#FD5401'} );
+       g.generate( '#punk1x', ...args, {zoom: 1, background: '#FD5401'} );
+  }
+
+
+document.addEventListener( "DOMContentLoaded", async () => {
+
+  const dataset = Dataset.parseCsv( `<%= spritesheet( 'tmp/spritesheet.csv' ) %>`
+                                  );
+
+   const composite = await ImageComposite.read( 'spritesheet.png', 24, 24 );
+   const sheet = new Spritesheet( composite, dataset );
+
+   sheet.drawSprites();
+
+
+   g = Generator.use( sheet );
+
+    autoupdate();
+    update();
+});
+
+</script>

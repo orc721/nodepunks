@@ -1,0 +1,830 @@
+<script src="https://learnpixelart.github.io/pixelart.js/dataset.js/dataset.js"></script>
+<script src="https://learnpixelart.github.io/pixelart.js/pixelart.js/composite.js"></script>
+<script src="https://learnpixelart.github.io/pixelart.js/pixelart.js/spritesheet.js"></script>
+<script src="https://learnpixelart.github.io/pixelart.js/pixelart.js/generator.js"></script>
+
+
+<style>
+  fieldset div {
+      display: inline-block;
+      width: 240px;
+  }
+</style>
+
+
+<p style="font-size: 80%;">
+    <a href="https://github.com/orc721/nodepunks">« Node Punks</a>
+</p>
+
+
+<h1>Build Your Own Node Punk (24×24) Wizard</h1>
+
+
+<p>Yes, you can!
+Build your own originals that you
+own 100% forever.
+Questions? Comments? 
+Join us in the <a href="https://discord.gg/dDhvHKjm2t">Ordbase discord (chat server)</a>.
+
+<br>
+Looking for monkes? 
+See <a href="../../monkes21/build">Monke (28×28) Wizard »</a>
+</p>
+
+
+
+<table>
+  <tr>
+    <td width="248px" valign="top">
+      <!-- first column -->
+
+      10x (240×240px)<br>
+      <canvas id="punk10x"></canvas>  <br>
+
+      4x (96×96px)<br>
+      <canvas id="punk4x"></canvas>  <br>
+
+      1x (24×24px)<br>
+      <canvas id="punk1x"></canvas>
+
+    </td>
+    <td><!-- second column -->
+
+
+<fieldset>
+<legend>Select a punk (archetype or readymade):</legend>
+<div class='columns'>
+  <input type="radio" id="t0" name="t" value="dark"  checked >
+    <label for="t0">    <span class="sprite" data-name="dark"></span>
+dark</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="t1" name="t" value="light" >
+    <label for="t1">    <span class="sprite" data-name="light"></span>
+light</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="t2" name="t" value="albino" >
+    <label for="t2">    <span class="sprite" data-name="albino"></span>
+albino</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="t3" name="t" value="orange" >
+    <label for="t3">    <span class="sprite" data-name="orange"></span>
+orange</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="t4" name="t" value="pink" >
+    <label for="t4">    <span class="sprite" data-name="pink"></span>
+pink</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="t5" name="t" value="zombie" >
+    <label for="t5">    <span class="sprite" data-name="zombie"></span>
+zombie</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="t6" name="t" value="orc" >
+    <label for="t6">    <span class="sprite" data-name="orc"></span>
+orc</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="t7" name="t" value="alien" >
+    <label for="t7">    <span class="sprite" data-name="alien"></span>
+alien</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="t8" name="t" value="black" >
+    <label for="t8">    <span class="sprite" data-name="black"></span>
+black</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="t9" name="t" value="ape" >
+    <label for="t9">    <span class="sprite" data-name="ape"></span>
+ape</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="t10" name="t" value="ape golden" >
+    <label for="t10">    <span class="sprite" data-name="ape golden"></span>
+ape golden</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="t11" name="t" value="joe" >
+    <label for="t11">    <span class="sprite" data-name="joe"></span>
+joe</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="t12" name="t" value="donald" >
+    <label for="t12">    <span class="sprite" data-name="donald"></span>
+donald</label>
+</div>
+</fieldset>
+<fieldset>
+<legend>Select hair:</legend>
+<div class='columns'>
+  <input type="radio" id="hair0" name="hair" value="none"  checked >
+    <label for="hair0">None</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="hair1" name="hair" value="mohawk blonde" >
+    <label for="hair1">    <span class="sprite" data-name="mohawk blonde"></span>
+mohawk blonde</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="hair2" name="hair" value="mohawk purple" >
+    <label for="hair2">    <span class="sprite" data-name="mohawk purple"></span>
+mohawk purple</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="hair3" name="hair" value="mohawk red" >
+    <label for="hair3">    <span class="sprite" data-name="mohawk red"></span>
+mohawk red</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="hair4" name="hair" value="mohawk" >
+    <label for="hair4">    <span class="sprite" data-name="mohawk"></span>
+mohawk</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="hair5" name="hair" value="mohawk 2blonde" >
+    <label for="hair5">    <span class="sprite" data-name="mohawk 2blonde"></span>
+mohawk 2blonde</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="hair6" name="hair" value="mohawk 2 purple" >
+    <label for="hair6">    <span class="sprite" data-name="mohawk 2 purple"></span>
+mohawk 2 purple</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="hair7" name="hair" value="mohawk 2 red" >
+    <label for="hair7">    <span class="sprite" data-name="mohawk 2 red"></span>
+mohawk 2 red</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="hair8" name="hair" value="mohawk 2" >
+    <label for="hair8">    <span class="sprite" data-name="mohawk 2"></span>
+mohawk 2</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="hair9" name="hair" value="peakspike blonde" >
+    <label for="hair9">    <span class="sprite" data-name="peakspike blonde"></span>
+peakspike blonde</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="hair10" name="hair" value="peakspike" >
+    <label for="hair10">    <span class="sprite" data-name="peakspike"></span>
+peakspike</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="hair11" name="hair" value="wildhair blonde" >
+    <label for="hair11">    <span class="sprite" data-name="wildhair blonde"></span>
+wildhair blonde</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="hair12" name="hair" value="wildhair purple" >
+    <label for="hair12">    <span class="sprite" data-name="wildhair purple"></span>
+wildhair purple</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="hair13" name="hair" value="wildhair red" >
+    <label for="hair13">    <span class="sprite" data-name="wildhair red"></span>
+wildhair red</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="hair14" name="hair" value="bob" >
+    <label for="hair14">    <span class="sprite" data-name="bob"></span>
+bob</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="hair15" name="hair" value="bob blonde" >
+    <label for="hair15">    <span class="sprite" data-name="bob blonde"></span>
+bob blonde</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="hair16" name="hair" value="bob 2 blonde" >
+    <label for="hair16">    <span class="sprite" data-name="bob 2 blonde"></span>
+bob 2 blonde</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="hair17" name="hair" value="bob 2 pink" >
+    <label for="hair17">    <span class="sprite" data-name="bob 2 pink"></span>
+bob 2 pink</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="hair18" name="hair" value="long hair" >
+    <label for="hair18">    <span class="sprite" data-name="long hair"></span>
+long hair</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="hair19" name="hair" value="long hair blonde" >
+    <label for="hair19">    <span class="sprite" data-name="long hair blonde"></span>
+long hair blonde</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="hair20" name="hair" value="long hair pink" >
+    <label for="hair20">    <span class="sprite" data-name="long hair pink"></span>
+long hair pink</label>
+</div>
+</fieldset>
+<fieldset>
+<legend>Select eyewear:</legend>
+<div class='columns'>
+  <input type="radio" id="eyes0" name="eyes" value="none"  checked >
+    <label for="eyes0">None</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="eyes1" name="eyes" value="3d glasses" >
+    <label for="eyes1">    <span class="sprite" data-name="3d glasses"></span>
+3d glasses</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="eyes2" name="eyes" value="big shades" >
+    <label for="eyes2">    <span class="sprite" data-name="big shades"></span>
+big shades</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="eyes3" name="eyes" value="small shades" >
+    <label for="eyes3">    <span class="sprite" data-name="small shades"></span>
+small shades</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="eyes4" name="eyes" value="regular shades" >
+    <label for="eyes4">    <span class="sprite" data-name="regular shades"></span>
+regular shades</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="eyes5" name="eyes" value="modern shades" >
+    <label for="eyes5">    <span class="sprite" data-name="modern shades"></span>
+modern shades</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="eyes6" name="eyes" value="horned rim glasses" >
+    <label for="eyes6">    <span class="sprite" data-name="horned rim glasses"></span>
+horned rim glasses</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="eyes7" name="eyes" value="nerd glasses" >
+    <label for="eyes7">    <span class="sprite" data-name="nerd glasses"></span>
+nerd glasses</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="eyes8" name="eyes" value="classic shades" >
+    <label for="eyes8">    <span class="sprite" data-name="classic shades"></span>
+classic shades</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="eyes9" name="eyes" value="clown eyes" >
+    <label for="eyes9">    <span class="sprite" data-name="clown eyes"></span>
+clown eyes</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="eyes10" name="eyes" value="clown eyes blue" >
+    <label for="eyes10">    <span class="sprite" data-name="clown eyes blue"></span>
+clown eyes blue</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="eyes11" name="eyes" value="cool shades" >
+    <label for="eyes11">    <span class="sprite" data-name="cool shades"></span>
+cool shades</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="eyes12" name="eyes" value="eyemask" >
+    <label for="eyes12">    <span class="sprite" data-name="eyemask"></span>
+eyemask</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="eyes13" name="eyes" value="eyepatch" >
+    <label for="eyes13">    <span class="sprite" data-name="eyepatch"></span>
+eyepatch</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="eyes14" name="eyes" value="polarized shades" >
+    <label for="eyes14">    <span class="sprite" data-name="polarized shades"></span>
+polarized shades</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="eyes15" name="eyes" value="vr" >
+    <label for="eyes15">    <span class="sprite" data-name="vr"></span>
+vr</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="eyes16" name="eyes" value="lasereyes 3 red" >
+    <label for="eyes16">    <span class="sprite" data-name="lasereyes 3 red"></span>
+lasereyes 3 red</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="eyes17" name="eyes" value="lasereyes 3 green" >
+    <label for="eyes17">    <span class="sprite" data-name="lasereyes 3 green"></span>
+lasereyes 3 green</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="eyes18" name="eyes" value="lasereyes 3 blue" >
+    <label for="eyes18">    <span class="sprite" data-name="lasereyes 3 blue"></span>
+lasereyes 3 blue</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="eyes19" name="eyes" value="lasereyes 3 gold" >
+    <label for="eyes19">    <span class="sprite" data-name="lasereyes 3 gold"></span>
+lasereyes 3 gold</label>
+</div>
+</fieldset>
+<fieldset>
+<legend>Select beard:</legend>
+<div class='columns'>
+  <input type="radio" id="beard0" name="beard" value="none"  checked >
+    <label for="beard0">None</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="beard1" name="beard" value="beard" >
+    <label for="beard1">    <span class="sprite" data-name="beard"></span>
+beard</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="beard2" name="beard" value="beard light" >
+    <label for="beard2">    <span class="sprite" data-name="beard light"></span>
+beard light</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="beard3" name="beard" value="luxurious beard" >
+    <label for="beard3">    <span class="sprite" data-name="luxurious beard"></span>
+luxurious beard</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="beard4" name="beard" value="luxurious beard light" >
+    <label for="beard4">    <span class="sprite" data-name="luxurious beard light"></span>
+luxurious beard light</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="beard5" name="beard" value="chinstrap" >
+    <label for="beard5">    <span class="sprite" data-name="chinstrap"></span>
+chinstrap</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="beard6" name="beard" value="chinstrap light" >
+    <label for="beard6">    <span class="sprite" data-name="chinstrap light"></span>
+chinstrap light</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="beard7" name="beard" value="goat" >
+    <label for="beard7">    <span class="sprite" data-name="goat"></span>
+goat</label>
+</div>
+</fieldset>
+<fieldset>
+<legend>Select nose accessory:</legend>
+<div class='columns'>
+  <input type="radio" id="nose0" name="nose" value="none"  checked >
+    <label for="nose0">None</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="nose1" name="nose" value="clown nose" >
+    <label for="nose1">    <span class="sprite" data-name="clown nose"></span>
+clown nose</label>
+</div>
+</fieldset>
+<fieldset>
+<legend>Select blemish:</legend>
+<div class='columns'>
+  <input type="radio" id="blemish0" name="blemish" value="none"  checked >
+    <label for="blemish0">None</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="blemish1" name="blemish" value="mole" >
+    <label for="blemish1">    <span class="sprite" data-name="mole"></span>
+mole</label>
+</div>
+</fieldset>
+<fieldset>
+<legend>Select lipstick make-up:</legend>
+<div class='columns'>
+  <input type="radio" id="lipstick0" name="lipstick" value="none"  checked >
+    <label for="lipstick0">None</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="lipstick1" name="lipstick" value="purple lipstick" >
+    <label for="lipstick1">    <span class="sprite" data-name="purple lipstick"></span>
+purple lipstick</label>
+</div>
+</fieldset>
+<fieldset>
+<legend>Select mouth prop:</legend>
+<div class='columns'>
+  <input type="radio" id="mouthprop0" name="mouthprop" value="none"  checked >
+    <label for="mouthprop0">None</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="mouthprop1" name="mouthprop" value="bubblegum" >
+    <label for="mouthprop1">    <span class="sprite" data-name="bubblegum"></span>
+bubblegum</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="mouthprop2" name="mouthprop" value="pipe" >
+    <label for="mouthprop2">    <span class="sprite" data-name="pipe"></span>
+pipe</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="mouthprop3" name="mouthprop" value="vape" >
+    <label for="mouthprop3">    <span class="sprite" data-name="vape"></span>
+vape</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="mouthprop4" name="mouthprop" value="cigarette" >
+    <label for="mouthprop4">    <span class="sprite" data-name="cigarette"></span>
+cigarette</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="mouthprop5" name="mouthprop" value="medical mask" >
+    <label for="mouthprop5">    <span class="sprite" data-name="medical mask"></span>
+medical mask</label>
+</div>
+</fieldset>
+<fieldset>
+<legend>Select earring:</legend>
+<div class='columns'>
+  <input type="radio" id="earring0" name="earring" value="none"  checked >
+    <label for="earring0">None</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="earring1" name="earring" value="earring" >
+    <label for="earring1">    <span class="sprite" data-name="earring"></span>
+earring</label>
+</div>
+</fieldset>
+<fieldset>
+<legend>Select neck accessory:</legend>
+<div class='columns'>
+  <input type="radio" id="neck0" name="neck" value="none"  checked >
+    <label for="neck0">None</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="neck1" name="neck" value="gold chain" >
+    <label for="neck1">    <span class="sprite" data-name="gold chain"></span>
+gold chain</label>
+</div>
+</fieldset>
+<fieldset>
+<legend>Select headwear (or hoodie):</legend>
+<div class='columns'>
+  <input type="radio" id="headwear0" name="headwear" value="none"  checked >
+    <label for="headwear0">None</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear1" name="headwear" value="bandana" >
+    <label for="headwear1">    <span class="sprite" data-name="bandana"></span>
+bandana</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear2" name="headwear" value="bandana 2" >
+    <label for="headwear2">    <span class="sprite" data-name="bandana 2"></span>
+bandana 2</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear3" name="headwear" value="bandana 3" >
+    <label for="headwear3">    <span class="sprite" data-name="bandana 3"></span>
+bandana 3</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear4" name="headwear" value="beanie" >
+    <label for="headwear4">    <span class="sprite" data-name="beanie"></span>
+beanie</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear5" name="headwear" value="cap mcb" >
+    <label for="headwear5">    <span class="sprite" data-name="cap mcb"></span>
+cap mcb</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear6" name="headwear" value="cap mcd" >
+    <label for="headwear6">    <span class="sprite" data-name="cap mcd"></span>
+cap mcd</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear7" name="headwear" value="cap small" >
+    <label for="headwear7">    <span class="sprite" data-name="cap small"></span>
+cap small</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear8" name="headwear" value="cap" >
+    <label for="headwear8">    <span class="sprite" data-name="cap"></span>
+cap</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear9" name="headwear" value="cap blue" >
+    <label for="headwear9">    <span class="sprite" data-name="cap blue"></span>
+cap blue</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear10" name="headwear" value="cap red" >
+    <label for="headwear10">    <span class="sprite" data-name="cap red"></span>
+cap red</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear11" name="headwear" value="cap forward" >
+    <label for="headwear11">    <span class="sprite" data-name="cap forward"></span>
+cap forward</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear12" name="headwear" value="police cap" >
+    <label for="headwear12">    <span class="sprite" data-name="police cap"></span>
+police cap</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear13" name="headwear" value="cowboy hat" >
+    <label for="headwear13">    <span class="sprite" data-name="cowboy hat"></span>
+cowboy hat</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear14" name="headwear" value="crown" >
+    <label for="headwear14">    <span class="sprite" data-name="crown"></span>
+crown</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear15" name="headwear" value="french cap" >
+    <label for="headwear15">    <span class="sprite" data-name="french cap"></span>
+french cap</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear16" name="headwear" value="headband" >
+    <label for="headwear16">    <span class="sprite" data-name="headband"></span>
+headband</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear17" name="headwear" value="headband ii" >
+    <label for="headwear17">    <span class="sprite" data-name="headband ii"></span>
+headband ii</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear18" name="headwear" value="headband 2" >
+    <label for="headwear18">    <span class="sprite" data-name="headband 2"></span>
+headband 2</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear19" name="headwear" value="headphone" >
+    <label for="headwear19">    <span class="sprite" data-name="headphone"></span>
+headphone</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear20" name="headwear" value="headphone 2" >
+    <label for="headwear20">    <span class="sprite" data-name="headphone 2"></span>
+headphone 2</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear21" name="headwear" value="jester hat" >
+    <label for="headwear21">    <span class="sprite" data-name="jester hat"></span>
+jester hat</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear22" name="headwear" value="knitted cap" >
+    <label for="headwear22">    <span class="sprite" data-name="knitted cap"></span>
+knitted cap</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear23" name="headwear" value="fedora" >
+    <label for="headwear23">    <span class="sprite" data-name="fedora"></span>
+fedora</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear24" name="headwear" value="classic hat" >
+    <label for="headwear24">    <span class="sprite" data-name="classic hat"></span>
+classic hat</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear25" name="headwear" value="top hat" >
+    <label for="headwear25">    <span class="sprite" data-name="top hat"></span>
+top hat</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear26" name="headwear" value="wizard hat" >
+    <label for="headwear26">    <span class="sprite" data-name="wizard hat"></span>
+wizard hat</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear27" name="headwear" value="do-rag" >
+    <label for="headwear27">    <span class="sprite" data-name="do-rag"></span>
+do-rag</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear28" name="headwear" value="do-rag blue" >
+    <label for="headwear28">    <span class="sprite" data-name="do-rag blue"></span>
+do-rag blue</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear29" name="headwear" value="do-rag red" >
+    <label for="headwear29">    <span class="sprite" data-name="do-rag red"></span>
+do-rag red</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear30" name="headwear" value="hoodie" >
+    <label for="headwear30">    <span class="sprite" data-name="hoodie"></span>
+hoodie</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear31" name="headwear" value="hoodie dark" >
+    <label for="headwear31">    <span class="sprite" data-name="hoodie dark"></span>
+hoodie dark</label>
+</div>
+<div class='columns'>
+  <input type="radio" id="headwear32" name="headwear" value="hoodie light" >
+    <label for="headwear32">    <span class="sprite" data-name="hoodie light"></span>
+hoodie light</label>
+</div>
+</fieldset>
+
+
+</td>
+</tr>
+</table>
+
+<p style="font-size: 80%;">
+   Open source public domain.
+   No rights reserved.
+  See
+  <a href="https://github.com/orc721/nodepunks/tree/master/builder">/nodepunks/builder »</a>
+</p>
+
+
+<script>
+
+     var g;    // (global) generator  (see document load)
+
+
+   function autoupdate() {
+    let els = document.querySelectorAll( "input[type='radio']" );
+       for( let el of Array.from( els ) ) {
+          el.addEventListener('click', () => update() );
+       }
+
+     // pre-select 
+     let el = document.querySelector( "input[value='joe']" );
+     el.checked = true;
+     el = document.querySelector( "input[value='small shades']" );
+     el.checked = true;
+     el = document.querySelector( "input[value='cap blue']" );
+     el.checked = true;
+
+   }
+
+  function update() {
+    let els = document.querySelectorAll( "input[type='radio']" );
+       // console.log( els );
+
+       let attributes = [];
+ 
+       for( let el of Array.from( els ) ) {
+         let value = el.value
+
+         if (el.checked) {
+           console.log( value );
+
+           if( value == 'none' ) {
+              continue;
+           }
+
+           attributes.push( value );
+         }
+       }
+
+       console.log( attributes );
+       generate( ...attributes );
+      }
+
+  function generate( ...args ) {
+       g.generate( '#punk10x', ...args, {zoom: 10, background: '#FD5401'} );
+       g.generate( '#punk4x', ...args, {zoom: 4, background: '#FD5401'} );
+       g.generate( '#punk1x', ...args, {zoom: 1, background: '#FD5401'} );
+  }
+
+
+document.addEventListener( "DOMContentLoaded", async () => {
+
+  const dataset = Dataset.parseCsv( `id, name
+0, maxibiz
+1, black
+2, default
+3, dark
+4, light
+5, albino
+6, orange
+7, pink
+8, zombie
+9, orc
+10, alien
+11, joe
+12, donald
+13, ape
+14, ape-golden
+15, bubblegum
+16, clownnose
+17, earring
+18, goldchain
+19, hoodie
+20, hoodiedark
+21, hoodielight
+22, headphone
+23, headphone2
+24, pipe
+25, vape
+26, cigarette
+27, medicalmask
+28, medicalmask2
+29, mole
+30, purplelipstick
+31, beard-light
+32, beard
+33, chinstrap-light
+34, chinstrap
+35, goat
+36, luxuriousbeard-light
+37, luxuriousbeard
+38, 3dglasses
+39, bigshades
+40, bigshades-green
+41, smallshades
+42, regularshades
+43, modernshades
+44, hornedrimglasses
+45, nerdglasses
+46, classicshades
+47, clowneyes-blue
+48, clowneyes
+49, coolshades
+50, eyemask
+51, eyepatch
+52, polarizedshades
+53, vr
+54, bob
+55, bob-blonde
+56, bob2-blonde
+57, bob2-pink
+58, longhair
+59, longhair-blonde
+60, longhair-pink
+61, mohawk-blonde
+62, mohawk-purple
+63, mohawk-red
+64, mohawk
+65, mohawk2-blonde
+66, mohawk2-purple
+67, mohawk2-red
+68, mohawk2
+69, peakspike-blonde
+70, peakspike
+71, wildhair-blonde
+72, wildhair-purple
+73, wildhair-red
+74, wildhair
+75, bandana
+76, bandana2
+77, bandana3
+78, beanie
+79, cap-mcb
+80, cap-mcd
+81, cap-small
+82, cap
+83, cap-blue
+84, cap-red
+85, capforward
+86, policecap
+87, cowboyhat
+88, crown
+89, frenchcap
+90, headband
+91, headband-ii
+92, headband2
+93, jesterhat
+94, knittedcap
+95, fedora
+96, classichat
+97, tophat
+98, wizardhat
+99, do-rag
+100, do-rag-blue
+101, do-rag-red
+102, lasereyes-blue
+103, lasereyes-gold
+104, lasereyes-green
+105, lasereyes-red
+106, lasereyes2-blue
+107, lasereyes2-gold
+108, lasereyes2-green
+109, lasereyes2-red
+110, lasereyes3-blue
+111, lasereyes3-gold
+112, lasereyes3-green
+113, lasereyes3-red
+`
+                                  );
+
+   const composite = await ImageComposite.read( 'spritesheet.png', 24, 24 );
+   const sheet = new Spritesheet( composite, dataset );
+
+   sheet.drawSprites();
+
+
+   g = Generator.use( sheet );
+
+    autoupdate();
+    update();
+});
+
+</script>

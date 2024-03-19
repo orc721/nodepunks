@@ -1,0 +1,19 @@
+#############
+# ignore all tmp directories
+
+tmp/
+tmp2/
+tmp3/
+tmp4/
+tmp5/
+
+
+#############
+# ignore all (sqlite) dbs for now - why? why not?
+*.db
+
+##
+# ignnore all env files
+.env
+.env.yml
+.env.yaml
