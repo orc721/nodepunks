@@ -17,7 +17,7 @@ Yes, you can.  First quick (do-it-yourself) version.
 [**Build your own Node Punk (24×24px) Wizard »**](https://orc721.github.io/nodepunks/build). 
 bonus - incl. golden ape, joe (biden) and donald (trump) and more. 
 
-note - no (crypto) wallet interaction. right-click & save (as .PNG) to get your (free) punk in 1x, 4x or 10x. 
+note - no (crypto) wallet interaction. right-click & save (as .PNG) to get your (free) node punk in 1x, 4x or 10x. 
 
 
 
