@@ -26,7 +26,7 @@ note - no (crypto) wallet interaction. right-click & save (as .PNG) to get your 
 
 **Mint web**
 
-Mint via [Bitcoin Ordinal Inscriptions](https://ordinals.com) started in December, 2023:
+Mint via Bitcoin Ordinal Inscriptions started in December, 2023:
 
   - <https://ordzaar.com/marketplace/collections/thenodepunks>
 
